@@ -12,7 +12,6 @@ namespace Lab3
         static string buffer;
         static Thread[] Writers = new Thread[writerNum];
         static Thread[] Readers = new Thread[readersNum];
-        //сигнальные сообщения
         static AutoResetEvent evFull;
         static AutoResetEvent evEmpty;   
         static bool finish = false;
@@ -37,7 +36,7 @@ namespace Lab3
         {
             var evFull = ((object[])state)[0] as AutoResetEvent;
             var evEmpty = ((object[])state)[1] as AutoResetEvent;
-            string[] locWriArr = new string[numMessages];//локальный массив писателя
+            string[] locWriArr = new string[numMessages];
             for (int j = 0; j < numMessages; j++)
                 locWriArr[j] = j.ToString();
             int i = 0;
